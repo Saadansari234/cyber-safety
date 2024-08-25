@@ -1,14 +1,17 @@
 import React from 'react'
 import BasicLayout from '../components/BasicLayout'
+import { useNavigate } from 'react-router-dom'
 const PolicyPage = () => {
 
+    const navigate=useNavigate()
     const menu = [
-        { title: "Menu", icon: "./assets/icon/menu.svg" },
-        { title: "Exit", icon: "./assets/icon/exit.svg" },
+        { title: "Menu", icon: "./assets/icon/menu.svg",  onClick:()=>navigate("/menupage") },
+        { title: "Exit", icon: "./assets/icon/exit.svg",  onClick:()=>navigate("/introvideo") },
         { title: "Mute", icon: "./assets/icon/mute.svg" }
     ]
     const footer = {
         isEnable: true,
+        backClick:()=>navigate("/introvideo")
     }
 
     return (
@@ -24,7 +27,7 @@ const PolicyPage = () => {
                         <div className='row  main' >
                             <div className='col-12  col-lg-6 text-content'>
                                 <div>
-                                    <img src='./assets/utils/loader-zebra-white.svg' />
+                                    <img alt='zebra line' src='./assets/utils/loader-zebra-white.svg' />
                                 </div>
                                 <div>
                                     Our Policy sets out responsibilities and standards to help keep our data safe.
@@ -35,7 +38,7 @@ const PolicyPage = () => {
                             </div>
                             <div className='col-12 col-lg-6 img-cotent'>
                                 <div className='policy-img'>
-                                    <img src='./assets/utils/Policy-pic.png'/>
+                                    <img alt='poicy' src='./assets/utils/Policy-pic.png'/>
                                 </div>
                             </div>
                         </div>

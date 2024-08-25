@@ -8,13 +8,13 @@ const CreateNamePage = () => {
   const matches = useMediaQuery("(max-width:480px)")
 
   const menu = [
-    { title: "Menu", icon: "./assets/icon/menu.svg",  },
-    { title: "Exit", icon: "./assets/icon/exit.svg",  },
+    { title: "Menu", icon: "./assets/icon/menu.svg", onClick:()=>navigate("/menupage") },
+    { title: "Exit", icon: "./assets/icon/exit.svg", onClick:()=>navigate("/")  },
     { title: "Mute", icon: "./assets/icon/mute.svg" }
   ]
   const footer = {
     isEnable: true,
-    nextClick: ()=>navigate("/menupage"),
+    nextClick: ()=>navigate("/introvideo"),
     backClick:()=>navigate("/")
   }
   return (
@@ -28,7 +28,7 @@ const CreateNamePage = () => {
         <div className='content'>
           <div className='inner-content'>
 
-            <img src={matches ? './assets/bg/introduction-panel-mobile.svg' : './assets/bg/introduction-panel.svg'} className='content-img' />
+            <img alt='panel' src={matches ? './assets/bg/introduction-panel-mobile.svg' : './assets/bg/introduction-panel.svg'} className='content-img' />
             <div className='content-body'>
               <p>In this course, we'd like to use your name (you can make up a name if you prefer).</p>
               <input type="text" id="name-input" placeholder="Please enter your name here" />

@@ -4,7 +4,9 @@ import Path from "../common/Path"
 import useMediaQuery from '../utils/useMediaQuery'
 import { WideIconleft } from '../common/Icons'
 import { WideIconright } from '../common/Icons'
+import { useNavigate } from 'react-router-dom'
 const BasicLayout = ({ children, image, menus, pathto, footer }) => {
+    const navigate=useNavigate()
     const matches = useMediaQuery("(max-width:768px)")
     return (
         <div className="container-home" style={{ backgroundImage: image }}>
@@ -13,7 +15,7 @@ const BasicLayout = ({ children, image, menus, pathto, footer }) => {
                 {
                     matches ? (
                         <div className="heading-left">
-                            <StraightIcon  title={"Menu"} icon={"./assets/icon/hamberger.svg"} />
+                            <StraightIcon onClick={()=>navigate('/menupage')}  title={"Menu"} icon={"./assets/icon/hamberger.svg"} />
                         </div>
                     ) : (
                         <div className="heading-left">

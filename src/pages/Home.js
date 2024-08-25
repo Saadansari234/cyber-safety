@@ -15,7 +15,7 @@ const Home = () => {
         <BasicLayout
             image={"url(./assets/bg/home-splash-bg.jpg)"}
             menus={menu}
-            pathto={["Cyber safety","Cyber safety"]}
+            // pathto={["Cyber safety","Cyber safety"]}
             footer={footer}
         >
             <div className='home-content'>

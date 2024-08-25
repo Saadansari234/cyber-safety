@@ -1,14 +1,18 @@
 
 import BasicLayout from '../components/BasicLayout'
 import VideoPlayer from '../components/video content/VideoPlayer'
+import { useNavigate } from 'react-router-dom'
 const IntroVideo = () => {
+    const navigate=useNavigate()
     const menu = [
-        { title: "Menu", icon: "./assets/icon/menu.svg" },
-        { title: "Exit", icon: "./assets/icon/exit.svg" },
+        { title: "Menu", icon: "./assets/icon/menu.svg" ,  onClick:()=>navigate("/menupage") },
+        { title: "Exit", icon: "./assets/icon/exit.svg", onClick:()=>navigate("/createname") },
         { title: "Mute", icon: "./assets/icon/mute.svg" }
     ]
     const footer = {
         isEnable: true,
+        nextClick: ()=>navigate("/policypage"),
+        backClick:()=>navigate("/createname")
     }
     return (
         <BasicLayout
