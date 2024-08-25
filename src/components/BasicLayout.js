@@ -13,7 +13,7 @@ const BasicLayout = ({ children, image, menus, pathto, footer }) => {
                 {
                     matches ? (
                         <div className="heading-left">
-                            <StraightIcon title={"Menu"} icon={"./assets/icon/hamberger.svg"} />
+                            <StraightIcon  title={"Menu"} icon={"./assets/icon/hamberger.svg"} />
                         </div>
                     ) : (
                         <div className="heading-left">
@@ -30,7 +30,7 @@ const BasicLayout = ({ children, image, menus, pathto, footer }) => {
                 <div className="controls">
                     {menus ?
                         menus.map((item, index) => {
-                            return (<StraightIcon key={index} title={item.title} icon={item.icon} />)
+                            return (<StraightIcon key={index} title={item.title} icon={item.icon} onClick={item.onClick} />)
                         }) : null
                     }
                 </div>
@@ -39,8 +39,8 @@ const BasicLayout = ({ children, image, menus, pathto, footer }) => {
             {
                 footer.isEnable ? (
                     <footer>
-                        <WideIconleft title={"Back"} icon={"./assets/icon/back.svg"} />
-                        <WideIconright title={"Next"} icon={"./assets/icon/next.svg"} />
+                        <WideIconleft title={"Back"} icon={"./assets/icon/back.svg"} onClick={footer.backClick} />
+                        <WideIconright title={"Next"} icon={"./assets/icon/next.svg"} onClick={footer.nextClick} />
                     </footer>
                 ) : null
             }

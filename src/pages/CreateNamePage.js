@@ -2,16 +2,20 @@ import React from 'react'
 import BasicLayout from '../components/BasicLayout'
 import Button from '../common/Button'
 import useMediaQuery from '../utils/useMediaQuery'
+import { useNavigate } from 'react-router-dom'
 const CreateNamePage = () => {
+  const navigate=useNavigate()
   const matches = useMediaQuery("(max-width:480px)")
 
   const menu = [
-    { title: "Menu", icon: "./assets/icon/menu.svg" },
-    { title: "Exit", icon: "./assets/icon/exit.svg" },
+    { title: "Menu", icon: "./assets/icon/menu.svg",  },
+    { title: "Exit", icon: "./assets/icon/exit.svg",  },
     { title: "Mute", icon: "./assets/icon/mute.svg" }
   ]
   const footer = {
     isEnable: true,
+    nextClick: ()=>navigate("/menupage"),
+    backClick:()=>navigate("/")
   }
   return (
     <BasicLayout
@@ -29,7 +33,7 @@ const CreateNamePage = () => {
               <p>In this course, we'd like to use your name (you can make up a name if you prefer).</p>
               <input type="text" id="name-input" placeholder="Please enter your name here" />
 
-              <Button name={"Submit"} />
+              <Button name={"Submit"} onclick={()=>navigate("/menupage")} />
             </div>
           </div>
         </div>

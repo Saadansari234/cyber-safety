@@ -1,7 +1,9 @@
 
 import BasicLayout from '../components/BasicLayout'
 import Button from '../common/Button'
+import { useNavigate } from 'react-router-dom'
 const Home = () => {
+    const navigate=useNavigate()
     const menu = [
         { title: "Exit", icon: "./assets/icon/exit.svg" },
         { title: "Mute", icon: "./assets/icon/mute.svg" }
@@ -23,7 +25,7 @@ const Home = () => {
                             <h5>Welcome to</h5>
                             <h1>Cyber Safety</h1>
                             <p>Click <strong>Start</strong> when you are ready to begin.</p>
-                            <Button name={"Start"}/>
+                            <Button name={"Start"} onclick={()=>navigate("/createname")}/>
                         </div>
                     </div>
 

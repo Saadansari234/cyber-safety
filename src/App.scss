@@ -25,7 +25,7 @@
   header {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px 20px;
   }
 
   footer {
@@ -34,7 +34,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px 20px;
   }
 
 
@@ -353,6 +353,7 @@
     justify-content: center;
     align-items: center;
   }
+
   @media (max-width: 1024px) {
     .content {
       background-size: contain;
@@ -361,6 +362,7 @@
 
     }
   }
+
   @media (max-width: 480px) {
     .content {
       background-size: contain;
@@ -438,24 +440,236 @@
 
 }
 
-.intro-video{
+.intro-video {
   .content {
     position: absolute;
-    width: 100vw;
-    height: 80vh;
-    padding: 20px;
+    // width: 100vw;
+    // height: 80vh;
+    margin-top: 10px;
+    width: 95vw;
+    height: 75vh;
+    padding: 20px 20px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-     background-color: aliceblue; // border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.822) ; // border-radius: 50%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    border-radius: 20px;
+  }
+
+  .inner-content {
+
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    /* Enable vertical scrolling */
+    scrollbar-width: none;
+    /* For Firefox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // border-radius: 20px;
+    // align-items: end;
+    // background-color: rgba(255, 255, 255, 0.918) ;// background-color: green;
+   
+  }
+  
+  .video-content{
+    width: 70%;
+    height: 90%;
+  }
+  .text-content{
+    width: 70%;
+    height: 10%;
+  }
+
+
+  .video-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+   
+  }
+  
+  .play-btn,
+  .volume-control,
+  .time-display,
+  .transcript-btn,
+  .fullscreen-btn {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .play-btn {
+    margin-right: 10px;
+  }
+  
+  .volume-control {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .time-display {
+    margin-right: auto;
+  }
+  
+  .transcript-btn {
+    background-color: #00e3e3;
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .fullscreen-btn {
+    margin-left: 10px;
+  }
+  
+
+  @media (max-width: 480px){
+    .content{
+      height: 35vh;
+    }
+    .video-content{
+      width: 100%;
+      height: auto;
+    }
+    .text-content{
+      width: 100%;
+      height: auto;
+    }
+
+    .transcript-btn {
+      border-radius: 5px;
+      padding: 2px 5px;
+    }
+    .play-btn,
+  .volume-control,
+  .time-display,
+  .transcript-btn,
+  .fullscreen-btn {
+    font-size: 14px;
+  }
+  }
+  @media (min-width: 481px) and (max-width: 768px){
+    .content{
+      height: 50vh;
+    }
+    .video-content{
+      width: 100%;
+      height: auto;
+    }
+    .text-content{
+      width: 100%;
+      height: auto;
+    }
+  }
+  @media (min-width: 769px) and (max-width: 1024px){
+    .content{
+      height: 60vh;
+    }
+    .video-content{
+      width: 100%;
+      height: auto;
+    }
+    .text-content{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+}
+
+
+
+.policy-page {
+  .content {
+    position: absolute;
+    width: 95vw;
+    height: 75vh;
+    padding: 10px 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.822); // border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 20px;
+    margin-top: 10px;
   }
 
-  .inner-content{
+  .inner-content {
+
     width: 100%;
     height: 100%;
-    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+   
+  }
+  .main{
+    width: 100%;
+    height: 100%;
+  }
+  .text-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .img-cotent{
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    flex-direction: column;
+    align-items: center;
+    // background-color: #007bff;
+  }
+
+  .policy-img{
+    width: 80%;
+    height: 60vh;
+    position: relative;
+    // background-color: #ddd;
+  }
+
+  @media (max-width: 480px){
+    .policy-img{
+      width: 80%;
+      height: 25vh;
+      
+    }
+  }
+  @media (min-width: 480px) and (max-width: 1024px) {
+    .policy-img{
+      width: 80%;
+      height: 40vh;
+    }
+  }
+
+  .policy-img>img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    left: 0%;
+    bottom: 0%;
+    top: 0%;
+
   }
 }
