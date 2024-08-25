@@ -1,0 +1,21 @@
+/* Remove default Bootstrap caret */
+.accordion-button::after {
+    content: none;
+  }
+  
+  /* Add custom icon for collapsed state */
+  .accordion-button.collapsed::before {
+    content: "\f0da"; /* Font Awesome down arrow */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+  }
+  
+  /* Add custom icon for expanded state */
+  .accordion-button::before {
+    content: "\f0d7"; /* Font Awesome up arrow */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+  }
+  
